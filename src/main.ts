@@ -9,6 +9,10 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true, // Elimina los campos que no estén en el DTO
       forbidNonWhitelisted: true, // Lanza un error cuando un campo no está en el DTO
+      transform: true, // Transforma los tipos de datos a los especificados en el DTO
+      transformOptions: {
+        enableImplicitConversion: true, // Convierte los tipos de datos a los especificados en el DTO
+      },
     }),
   );
 
